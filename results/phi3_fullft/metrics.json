@@ -1,0 +1,113 @@
+{
+  "experiment": "Phi-3 Mini full fine-tuning baseline",
+  "phase": 1,
+  "model": "microsoft/Phi-3-mini-4k-instruct",
+  "method": "PyTorch FSDP FULL_SHARD full fine-tuning",
+  "hardware": "2 x NVIDIA Tesla T4",
+  "precision": "FP16",
+  "optimizer": "bitsandbytes AdamW8bit",
+  "seed": 42,
+  "epochs": 1,
+  "effective_global_batch_size": 8,
+  "learning_rate": 0.00002,
+  "results_are_single_runs": true,
+  "variants": {
+    "B0": {
+      "audio_description": false,
+      "prompt_setting": "text-only",
+      "datasets": {
+        "MELD": {
+          "max_length": 512,
+          "split_sizes": {
+            "train": 9980,
+            "valid": 1099,
+            "test": 2610
+          },
+          "valid": {
+            "accuracy": 0.6960873521383075,
+            "macro_f1": 0.5540372514865973,
+            "weighted_f1": 0.679825297603242,
+            "unknown_predictions": 0
+          },
+          "test": {
+            "accuracy": 0.6846743295019158,
+            "macro_f1": 0.49356352200237785,
+            "weighted_f1": 0.6650672859272145,
+            "unknown_predictions": 0
+          }
+        },
+        "IEMOCAP": {
+          "max_length": 384,
+          "split_sizes": {
+            "train": 5163,
+            "valid": 647,
+            "test": 1623
+          },
+          "valid": {
+            "accuracy": 0.6414219474497682,
+            "macro_f1": 0.6302536535120081,
+            "weighted_f1": 0.6358842417365645,
+            "unknown_predictions": 0
+          },
+          "test": {
+            "accuracy": 0.7104128157732594,
+            "macro_f1": 0.7000937942755739,
+            "weighted_f1": 0.7106201190387096,
+            "unknown_predictions": 0
+          }
+        }
+      }
+    },
+    "B1": {
+      "audio_description": true,
+      "prompt_setting": "speech descriptions",
+      "datasets": {
+        "MELD": {
+          "max_length": 512,
+          "split_sizes": {
+            "train": 9980,
+            "valid": 1099,
+            "test": 2610
+          },
+          "valid": {
+            "accuracy": 0.6951774340309372,
+            "macro_f1": 0.54563046887932,
+            "weighted_f1": 0.6786382104531122,
+            "unknown_predictions": 0
+          },
+          "test": {
+            "accuracy": 0.6908045977011494,
+            "macro_f1": 0.5015681303831786,
+            "weighted_f1": 0.6697370009462941,
+            "unknown_predictions": 0
+          }
+        },
+        "IEMOCAP": {
+          "max_length": 384,
+          "split_sizes": {
+            "train": 5163,
+            "valid": 647,
+            "test": 1623
+          },
+          "valid": {
+            "accuracy": 0.6676970633693973,
+            "macro_f1": 0.6500047757035322,
+            "weighted_f1": 0.6621732941719168,
+            "unknown_predictions": 0
+          },
+          "test": {
+            "accuracy": 0.7134935304990758,
+            "macro_f1": 0.704871212514791,
+            "weighted_f1": 0.7129618711660843,
+            "unknown_predictions": 0
+          }
+        }
+      }
+    }
+  },
+  "caveats": [
+    "The results are from one seed and one epoch per dataset/variant.",
+    "The progress report lists further matched and repeat runs as pending.",
+    "B2/B3 downstream emotion metrics for denoised features have not been measured."
+  ]
+}

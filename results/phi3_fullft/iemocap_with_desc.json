@@ -1,0 +1,17 @@
+{
+    "dataset": "iemocap",
+    "valid": {
+      "accuracy": 0.6676970633693973,
+      "macro_f1": 0.6500047757035322,
+      "weighted_f1": 0.6621732941719168,
+      "unknown_predictions": 0
+    },
+    "test": {
+      "accuracy": 0.7134935304990758,
+      "macro_f1": 0.704871212514791,
+      "weighted_f1": 0.7129618711660843,
+      "unknown_predictions": 0
+    },
+    "training_updates": 646,
+    "final_model": "/kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model"
+  }

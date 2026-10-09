@@ -1,0 +1,18 @@
+{
+    "dataset": "iemocap",
+    "setting": "no_audio_description",
+    "valid": {
+      "accuracy": 0.6414219474497682,
+      "macro_f1": 0.6302536535120081,
+      "weighted_f1": 0.6358842417365645,
+      "unknown_predictions": 0
+    },
+    "test": {
+      "accuracy": 0.7104128157732594,
+      "macro_f1": 0.7000937942755739,
+      "weighted_f1": 0.7106201190387096,
+      "unknown_predictions": 0
+    },
+    "training_updates": 646,
+    "final_model": "utkarshumap/speechcuelm-phi3mini-nodesc-iemocap-final (Kaggle)"
+  }

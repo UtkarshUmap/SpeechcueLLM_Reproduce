@@ -1,0 +1,1 @@
+{"repos": [{"repoId": "speechbrain/metricgan-plus-voicebank", "repoType": "model", "commitHash": "a196ce26b3bdace6fa1d819017584bdbcce462a8", "filePaths": ["hyperparams.yaml", "enhance_model.ckpt"]}]}

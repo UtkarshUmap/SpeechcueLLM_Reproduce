@@ -1,0 +1,17 @@
+{
+    "dataset": "meld",
+    "valid": {
+      "accuracy": 0.6951774340309372,
+      "macro_f1": 0.54563046887932,
+      "weighted_f1": 0.6786382104531122,
+      "unknown_predictions": 0
+    },
+    "test": {
+      "accuracy": 0.6908045977011494,
+      "macro_f1": 0.5015681303831786,
+      "weighted_f1": 0.6697370009462941,
+      "unknown_predictions": 0
+    },
+    "training_updates": 1248,
+    "final_model": "/kaggle/working/phi3_speechcuelm_outputs/meld/final_model"
+  }

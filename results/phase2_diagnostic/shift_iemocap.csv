@@ -1,0 +1,6 @@
+feature,raw_median,den_median,median_shift_%,spearman,KS
+volume avg,59.182,73.278,23.818,0.124,0.822
+volume var,9.241,11.174,20.922,0.626,0.348
+pitch avg,196.1,218.747,11.549,0.749,0.163
+pitch var,58.111,70.631,21.546,0.294,0.191
+speaking rate,4.055,4.382,8.063,0.455,0.146

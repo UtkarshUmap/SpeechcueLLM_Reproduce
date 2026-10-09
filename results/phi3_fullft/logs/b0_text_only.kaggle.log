@@ -1,0 +1,732 @@
+Note: you may need to restart the kernel to use updated packages.
+GPUs: 2
+0 Tesla T4
+1 Tesla T4
+✅ Script written and syntax OK: /kaggle/working/speechcuelm_phi3mini_nodesc_fsdp.py
+
+===== Launching meld NO-DESC (MAX_LEN=512) =====
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+======================================================================
+Phi-3 Mini FULL FT | TEXT-ONLY (no audio description) | FSDP FULL_SHARD | effective batch 8 | datasets: ('meld',) | max_len: 512
+======================================================================
+../PROCESSED_DATASET/meld/window/False_False
+[sanity] /kaggle/working/SpeechCueLLM_nodesc/PROCESSED_DATASET/meld/window/False_False: 0/300 sample prompts mention acoustic terms
+[sanity] sample input:
+ Now you are expert of sentiment and emotional analysis.The following conversation noted between '### ###' involves several speakers.  ### 	 Speaker_0:"also I was the point person on my company's transition from the KL-5 to GR-6 system." ### Please select the emotional label of < Speaker_0:"also I was the point person on my company's transition from the KL-5 to GR-6 system."> from <neutral, surprise, fear, sad, joyful, disgust, angry> based on the context. Respond with just one label:
+No persistent checkpoint: BackendError('POST failed with: {"errors":["Not found"],"error":{"code":5},"wasSuccessful":false}')
+
+======================================================================
+DATASET: MELD (NO DESCRIPTION)
+======================================================================
+Train/Valid/Test: 9980 1099 2610
+Sample keys: ['path', 'input', 'target']
+Labels: ['angry', 'disgust', 'fear', 'joyful', 'neutral', 'sad', 'surprise']
+Loading Phi-3 Mini (FP16, CPU)...
+Fetching 2 files: 100%|██████████| 2/2 [00:27<00:00, 13.94s/it]
+Fetching 2 files: 100%|██████████| 2/2 [00:27<00:00, 13.98s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:16<00:00,  8.02s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:16<00:00,  8.02s/it]
+FSDP ready. GPU mem (GB): 3.82
+
+Epoch 1/1
+/kaggle/working/speechcuelm_phi3mini_nodesc_fsdp.py:517: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scheduler.step()
+/kaggle/working/speechcuelm_phi3mini_nodesc_fsdp.py:517: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scheduler.step()
+epoch=1 batch=40/4990 update=10/1248 loss=1.8662 lr=5.95e-06 scale=4096 elapsed=1.5m
+epoch=1 batch=80/4990 update=20/1248 loss=0.4540 lr=1.14e-05 scale=4096 elapsed=3.0m
+epoch=1 batch=120/4990 update=30/1248 loss=0.0224 lr=1.68e-05 scale=4096 elapsed=4.5m
+epoch=1 batch=160/4990 update=40/1248 loss=0.0007 lr=2.00e-05 scale=4096 elapsed=5.9m
+epoch=1 batch=200/4990 update=50/1248 loss=0.0318 lr=1.98e-05 scale=4096 elapsed=7.4m
+epoch=1 batch=240/4990 update=60/1248 loss=0.1474 lr=1.96e-05 scale=4096 elapsed=8.9m
+epoch=1 batch=280/4990 update=70/1248 loss=0.0329 lr=1.95e-05 scale=4096 elapsed=10.4m
+epoch=1 batch=320/4990 update=80/1248 loss=0.2728 lr=1.93e-05 scale=4096 elapsed=11.9m
+epoch=1 batch=360/4990 update=90/1248 loss=0.1095 lr=1.91e-05 scale=4096 elapsed=13.4m
+epoch=1 batch=400/4990 update=100/1248 loss=0.5362 lr=1.90e-05 scale=4096 elapsed=14.8m
+epoch=1 batch=440/4990 update=110/1248 loss=0.0162 lr=1.88e-05 scale=4096 elapsed=16.3m
+epoch=1 batch=480/4990 update=120/1248 loss=0.1218 lr=1.86e-05 scale=4096 elapsed=17.8m
+epoch=1 batch=520/4990 update=130/1248 loss=0.7602 lr=1.85e-05 scale=4096 elapsed=19.3m
+epoch=1 batch=560/4990 update=140/1248 loss=0.0062 lr=1.83e-05 scale=4096 elapsed=20.8m
+epoch=1 batch=600/4990 update=150/1248 loss=0.6653 lr=1.81e-05 scale=4096 elapsed=22.3m
+epoch=1 batch=640/4990 update=160/1248 loss=0.1465 lr=1.80e-05 scale=4096 elapsed=23.8m
+epoch=1 batch=680/4990 update=170/1248 loss=0.0032 lr=1.78e-05 scale=4096 elapsed=25.2m
+epoch=1 batch=720/4990 update=180/1248 loss=1.1943 lr=1.76e-05 scale=4096 elapsed=26.7m
+epoch=1 batch=760/4990 update=190/1248 loss=0.4514 lr=1.75e-05 scale=4096 elapsed=28.2m
+epoch=1 batch=800/4990 update=200/1248 loss=0.2070 lr=1.73e-05 scale=4096 elapsed=29.7m
+epoch=1 batch=840/4990 update=210/1248 loss=0.6265 lr=1.71e-05 scale=4096 elapsed=31.2m
+epoch=1 batch=880/4990 update=220/1248 loss=0.0249 lr=1.70e-05 scale=4096 elapsed=32.7m
+epoch=1 batch=920/4990 update=230/1248 loss=0.0296 lr=1.68e-05 scale=4096 elapsed=34.2m
+epoch=1 batch=960/4990 update=240/1248 loss=0.1368 lr=1.66e-05 scale=4096 elapsed=35.7m
+epoch=1 batch=1000/4990 update=250/1248 loss=0.0927 lr=1.65e-05 scale=4096 elapsed=37.1m
+epoch=1 batch=1040/4990 update=260/1248 loss=0.3780 lr=1.63e-05 scale=4096 elapsed=38.6m
+epoch=1 batch=1080/4990 update=270/1248 loss=0.3494 lr=1.62e-05 scale=4096 elapsed=40.1m
+epoch=1 batch=1120/4990 update=280/1248 loss=0.3638 lr=1.60e-05 scale=4096 elapsed=41.6m
+epoch=1 batch=1160/4990 update=290/1248 loss=0.3316 lr=1.58e-05 scale=4096 elapsed=43.1m
+epoch=1 batch=1200/4990 update=300/1248 loss=0.0032 lr=1.57e-05 scale=4096 elapsed=44.6m
+epoch=1 batch=1240/4990 update=310/1248 loss=0.2589 lr=1.55e-05 scale=4096 elapsed=46.0m
+epoch=1 batch=1280/4990 update=320/1248 loss=0.2004 lr=1.53e-05 scale=4096 elapsed=47.5m
+epoch=1 batch=1320/4990 update=330/1248 loss=0.0195 lr=1.52e-05 scale=4096 elapsed=49.0m
+epoch=1 batch=1360/4990 update=340/1248 loss=0.2889 lr=1.50e-05 scale=4096 elapsed=50.5m
+epoch=1 batch=1400/4990 update=350/1248 loss=0.1963 lr=1.48e-05 scale=4096 elapsed=52.0m
+epoch=1 batch=1440/4990 update=360/1248 loss=1.1841 lr=1.47e-05 scale=4096 elapsed=53.5m
+epoch=1 batch=1480/4990 update=370/1248 loss=0.2127 lr=1.45e-05 scale=4096 elapsed=54.9m
+epoch=1 batch=1520/4990 update=380/1248 loss=0.0839 lr=1.43e-05 scale=4096 elapsed=56.4m
+epoch=1 batch=1560/4990 update=390/1248 loss=0.0588 lr=1.42e-05 scale=4096 elapsed=57.9m
+epoch=1 batch=1600/4990 update=400/1248 loss=1.3266 lr=1.40e-05 scale=4096 elapsed=59.4m
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_shard_utils.py:58: UserWarning: `_get_pg_default_device` will be deprecated, it only stays for backward-compatibility reason. If you need to find a device for object collectives, please use `_get_object_coll_device`. If you need to query the device types supported by group, please use `_device_capability(group)`. 
+  distributed_c10d._get_pg_default_device(pg).type
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_shard_utils.py:58: UserWarning: `_get_pg_default_device` will be deprecated, it only stays for backward-compatibility reason. If you need to find a device for object collectives, please use `_get_object_coll_device`. If you need to query the device types supported by group, please use `_device_capability(group)`. 
+  distributed_c10d._get_pg_default_device(pg).type
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:732: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  local_shape = tensor.shape
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:732: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  local_shape = tensor.shape
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:749: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.shape,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:749: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.shape,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:751: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.dtype,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:751: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.dtype,
+
+CHECKPOINT SAVED | meld epoch=0 next_batch=1600 update=400
+Uploading checkpoint to Kaggle...
+Uploading Dataset https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-nodesc-fullft-checkpoints ...
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/progress.json
+Uploading: 100%|██████████| 107/107 [00:00<00:00, 419B/s]
+Uploading:   0%|          | 0.00/93.0 [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/progress.json (107B)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/data_dirs.json
+Uploading: 100%|██████████| 93.0/93.0 [00:00<00:00, 345B/s]
+Uploading:   0%|          | 0.00/3.82G [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/data_dirs.json (93B)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/__1_0.distcp
+Uploading: 100%|██████████| 3.82G/3.82G [00:45<00:00, 84.7MB/s]
+Uploading:   0%|          | 0.00/3.82G [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/__1_0.distcp (4GB)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/__0_0.distcp
+Uploading: 100%|██████████| 3.82G/3.82G [00:31<00:00, 121MB/s] 
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/__0_0.distcp (4GB)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/.metadata
+Uploading: 100%|██████████| 106k/106k [00:00<00:00, 336kB/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/.metadata (103KB)
+Your dataset has been created.
+Files are being processed...
+See at: https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-nodesc-fullft-checkpoints
+Upload done.
+epoch=1 batch=1640/4990 update=410/1248 loss=0.0802 lr=1.38e-05 scale=4096 elapsed=63.0m
+epoch=1 batch=1680/4990 update=420/1248 loss=0.2904 lr=1.37e-05 scale=4096 elapsed=64.4m
+epoch=1 batch=1720/4990 update=430/1248 loss=0.0682 lr=1.35e-05 scale=4096 elapsed=65.9m
+epoch=1 batch=1760/4990 update=440/1248 loss=0.0094 lr=1.33e-05 scale=4096 elapsed=67.4m
+epoch=1 batch=1800/4990 update=450/1248 loss=0.0247 lr=1.32e-05 scale=4096 elapsed=68.9m
+epoch=1 batch=1840/4990 update=460/1248 loss=0.4875 lr=1.30e-05 scale=4096 elapsed=70.4m
+epoch=1 batch=1880/4990 update=470/1248 loss=0.7934 lr=1.28e-05 scale=4096 elapsed=71.9m
+epoch=1 batch=1920/4990 update=480/1248 loss=0.4047 lr=1.27e-05 scale=4096 elapsed=73.3m
+epoch=1 batch=1960/4990 update=490/1248 loss=1.1353 lr=1.25e-05 scale=4096 elapsed=74.8m
+epoch=1 batch=2000/4990 update=500/1248 loss=0.8834 lr=1.24e-05 scale=4096 elapsed=76.3m
+epoch=1 batch=2040/4990 update=510/1248 loss=0.0415 lr=1.22e-05 scale=4096 elapsed=77.8m
+epoch=1 batch=2080/4990 update=520/1248 loss=0.0139 lr=1.20e-05 scale=4096 elapsed=79.3m
+epoch=1 batch=2120/4990 update=530/1248 loss=0.2413 lr=1.19e-05 scale=4096 elapsed=80.8m
+epoch=1 batch=2160/4990 update=540/1248 loss=0.7678 lr=1.17e-05 scale=4096 elapsed=82.2m
+epoch=1 batch=2200/4990 update=550/1248 loss=0.0662 lr=1.15e-05 scale=4096 elapsed=83.7m
+epoch=1 batch=2240/4990 update=560/1248 loss=0.1176 lr=1.14e-05 scale=4096 elapsed=85.2m
+epoch=1 batch=2280/4990 update=570/1248 loss=0.0732 lr=1.12e-05 scale=4096 elapsed=86.7m
+epoch=1 batch=2320/4990 update=580/1248 loss=1.5780 lr=1.10e-05 scale=4096 elapsed=88.2m
+epoch=1 batch=2360/4990 update=590/1248 loss=0.0494 lr=1.09e-05 scale=4096 elapsed=89.7m
+epoch=1 batch=2400/4990 update=600/1248 loss=0.1689 lr=1.07e-05 scale=4096 elapsed=91.2m
+epoch=1 batch=2440/4990 update=610/1248 loss=0.0621 lr=1.05e-05 scale=4096 elapsed=92.6m
+epoch=1 batch=2480/4990 update=620/1248 loss=0.3108 lr=1.04e-05 scale=4096 elapsed=94.1m
+epoch=1 batch=2520/4990 update=630/1248 loss=1.4081 lr=1.02e-05 scale=4096 elapsed=95.6m
+epoch=1 batch=2560/4990 update=640/1248 loss=0.0467 lr=1.00e-05 scale=4096 elapsed=97.1m
+epoch=1 batch=2600/4990 update=650/1248 loss=0.0105 lr=9.88e-06 scale=4096 elapsed=98.6m
+epoch=1 batch=2640/4990 update=660/1248 loss=0.6483 lr=9.71e-06 scale=4096 elapsed=100.1m
+epoch=1 batch=2680/4990 update=670/1248 loss=0.2387 lr=9.55e-06 scale=4096 elapsed=101.5m
+epoch=1 batch=2720/4990 update=680/1248 loss=0.1058 lr=9.38e-06 scale=4096 elapsed=103.0m
+epoch=1 batch=2760/4990 update=690/1248 loss=0.7444 lr=9.22e-06 scale=4096 elapsed=104.5m
+epoch=1 batch=2800/4990 update=700/1248 loss=0.5186 lr=9.05e-06 scale=4096 elapsed=106.0m
+epoch=1 batch=2840/4990 update=710/1248 loss=0.3189 lr=8.89e-06 scale=4096 elapsed=107.5m
+epoch=1 batch=2880/4990 update=720/1248 loss=0.1048 lr=8.72e-06 scale=4096 elapsed=109.0m
+epoch=1 batch=2920/4990 update=730/1248 loss=1.0888 lr=8.55e-06 scale=4096 elapsed=110.4m
+epoch=1 batch=2960/4990 update=740/1248 loss=0.2901 lr=8.39e-06 scale=4096 elapsed=111.9m
+epoch=1 batch=3000/4990 update=750/1248 loss=1.0103 lr=8.22e-06 scale=4096 elapsed=113.4m
+epoch=1 batch=3040/4990 update=760/1248 loss=0.1255 lr=8.06e-06 scale=4096 elapsed=114.9m
+epoch=1 batch=3080/4990 update=770/1248 loss=0.2752 lr=7.89e-06 scale=4096 elapsed=116.4m
+epoch=1 batch=3120/4990 update=780/1248 loss=0.1045 lr=7.73e-06 scale=4096 elapsed=117.9m
+epoch=1 batch=3160/4990 update=790/1248 loss=0.0189 lr=7.56e-06 scale=4096 elapsed=119.4m
+epoch=1 batch=3200/4990 update=800/1248 loss=1.1687 lr=7.40e-06 scale=4096 elapsed=120.9m
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_shard_utils.py:58: UserWarning: `_get_pg_default_device` will be deprecated, it only stays for backward-compatibility reason. If you need to find a device for object collectives, please use `_get_object_coll_device`. If you need to query the device types supported by group, please use `_device_capability(group)`. 
+  distributed_c10d._get_pg_default_device(pg).type
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_shard_utils.py:58: UserWarning: `_get_pg_default_device` will be deprecated, it only stays for backward-compatibility reason. If you need to find a device for object collectives, please use `_get_object_coll_device`. If you need to query the device types supported by group, please use `_device_capability(group)`. 
+  distributed_c10d._get_pg_default_device(pg).type
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:732: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  local_shape = tensor.shape
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:749: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.shape,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:751: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.dtype,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:732: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  local_shape = tensor.shape
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:749: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.shape,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:751: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.dtype,
+
+CHECKPOINT SAVED | meld epoch=0 next_batch=3200 update=800
+Uploading checkpoint to Kaggle...
+Uploading Dataset https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-nodesc-fullft-checkpoints ...
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/progress.json
+Uploading: 100%|██████████| 107/107 [00:00<00:00, 437B/s]
+Uploading:   0%|          | 0.00/93.0 [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/progress.json (107B)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/data_dirs.json
+Uploading: 100%|██████████| 93.0/93.0 [00:00<00:00, 414B/s]
+Uploading:   0%|          | 4.21M/3.82G [00:00<01:31, 41.8MB/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/data_dirs.json (93B)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/__1_0.distcp
+Uploading: 100%|██████████| 3.82G/3.82G [00:23<00:00, 166MB/s] 
+Uploading:   0%|          | 0.00/3.82G [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/__1_0.distcp (4GB)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/__0_0.distcp
+Uploading: 100%|██████████| 3.82G/3.82G [00:51<00:00, 73.7MB/s]
+Uploading:   0%|          | 0.00/106k [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/__0_0.distcp (4GB)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/.metadata
+Uploading: 100%|██████████| 106k/106k [00:00<00:00, 481kB/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/.metadata (103KB)
+Your dataset version has been created.
+Files are being processed...
+See at: https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-nodesc-fullft-checkpoints
+Upload done.
+epoch=1 batch=3240/4990 update=810/1248 loss=0.0550 lr=7.23e-06 scale=4096 elapsed=124.2m
+epoch=1 batch=3280/4990 update=820/1248 loss=0.5215 lr=7.07e-06 scale=4096 elapsed=125.7m
+epoch=1 batch=3320/4990 update=830/1248 loss=0.0860 lr=6.90e-06 scale=4096 elapsed=127.2m
+epoch=1 batch=3360/4990 update=840/1248 loss=0.0134 lr=6.74e-06 scale=4096 elapsed=128.6m
+epoch=1 batch=3400/4990 update=850/1248 loss=0.5059 lr=6.57e-06 scale=4096 elapsed=130.1m
+epoch=1 batch=3440/4990 update=860/1248 loss=0.1354 lr=6.41e-06 scale=4096 elapsed=131.6m
+epoch=1 batch=3480/4990 update=870/1248 loss=0.4858 lr=6.24e-06 scale=4096 elapsed=133.1m
+epoch=1 batch=3520/4990 update=880/1248 loss=0.9861 lr=6.08e-06 scale=4096 elapsed=134.6m
+epoch=1 batch=3560/4990 update=890/1248 loss=0.4985 lr=5.91e-06 scale=4096 elapsed=136.1m
+epoch=1 batch=3600/4990 update=900/1248 loss=0.1182 lr=5.75e-06 scale=4096 elapsed=137.5m
+epoch=1 batch=3640/4990 update=910/1248 loss=0.0239 lr=5.58e-06 scale=4096 elapsed=139.0m
+epoch=1 batch=3680/4990 update=920/1248 loss=0.4373 lr=5.42e-06 scale=4096 elapsed=140.5m
+epoch=1 batch=3720/4990 update=930/1248 loss=0.0605 lr=5.25e-06 scale=4096 elapsed=142.0m
+epoch=1 batch=3760/4990 update=940/1248 loss=0.4012 lr=5.09e-06 scale=4096 elapsed=143.5m
+epoch=1 batch=3800/4990 update=950/1248 loss=1.2722 lr=4.92e-06 scale=4096 elapsed=145.0m
+epoch=1 batch=3840/4990 update=960/1248 loss=0.1170 lr=4.76e-06 scale=4096 elapsed=146.5m
+epoch=1 batch=3880/4990 update=970/1248 loss=0.0082 lr=4.59e-06 scale=4096 elapsed=148.0m
+epoch=1 batch=3920/4990 update=980/1248 loss=0.0531 lr=4.43e-06 scale=4096 elapsed=149.4m
+epoch=1 batch=3960/4990 update=990/1248 loss=0.0305 lr=4.26e-06 scale=4096 elapsed=150.9m
+epoch=1 batch=4000/4990 update=1000/1248 loss=0.5877 lr=4.10e-06 scale=4096 elapsed=152.4m
+epoch=1 batch=4040/4990 update=1010/1248 loss=0.0058 lr=3.93e-06 scale=4096 elapsed=153.9m
+epoch=1 batch=4080/4990 update=1020/1248 loss=0.1925 lr=3.77e-06 scale=4096 elapsed=155.4m
+epoch=1 batch=4120/4990 update=1030/1248 loss=0.6695 lr=3.60e-06 scale=4096 elapsed=156.9m
+epoch=1 batch=4160/4990 update=1040/1248 loss=0.7154 lr=3.44e-06 scale=4096 elapsed=158.3m
+epoch=1 batch=4200/4990 update=1050/1248 loss=0.0588 lr=3.27e-06 scale=4096 elapsed=159.8m
+epoch=1 batch=4240/4990 update=1060/1248 loss=0.0228 lr=3.10e-06 scale=4096 elapsed=161.3m
+epoch=1 batch=4280/4990 update=1070/1248 loss=0.0318 lr=2.94e-06 scale=4096 elapsed=162.8m
+epoch=1 batch=4320/4990 update=1080/1248 loss=0.0259 lr=2.77e-06 scale=4096 elapsed=164.3m
+epoch=1 batch=4360/4990 update=1090/1248 loss=0.3841 lr=2.61e-06 scale=4096 elapsed=165.8m
+epoch=1 batch=4400/4990 update=1100/1248 loss=0.5775 lr=2.44e-06 scale=4096 elapsed=167.2m
+epoch=1 batch=4440/4990 update=1110/1248 loss=0.5387 lr=2.28e-06 scale=4096 elapsed=168.7m
+epoch=1 batch=4480/4990 update=1120/1248 loss=0.5833 lr=2.11e-06 scale=4096 elapsed=170.2m
+epoch=1 batch=4520/4990 update=1130/1248 loss=0.2942 lr=1.95e-06 scale=4096 elapsed=171.7m
+epoch=1 batch=4560/4990 update=1140/1248 loss=0.4546 lr=1.78e-06 scale=4096 elapsed=173.2m
+epoch=1 batch=4600/4990 update=1150/1248 loss=0.9489 lr=1.62e-06 scale=4096 elapsed=174.6m
+epoch=1 batch=4640/4990 update=1160/1248 loss=0.0591 lr=1.45e-06 scale=4096 elapsed=176.1m
+epoch=1 batch=4680/4990 update=1170/1248 loss=0.0336 lr=1.29e-06 scale=4096 elapsed=177.6m
+epoch=1 batch=4720/4990 update=1180/1248 loss=0.0280 lr=1.12e-06 scale=4096 elapsed=179.1m
+epoch=1 batch=4760/4990 update=1190/1248 loss=0.0227 lr=9.58e-07 scale=4096 elapsed=180.6m
+epoch=1 batch=4800/4990 update=1200/1248 loss=0.0719 lr=7.93e-07 scale=4096 elapsed=182.1m
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_shard_utils.py:58: UserWarning: `_get_pg_default_device` will be deprecated, it only stays for backward-compatibility reason. If you need to find a device for object collectives, please use `_get_object_coll_device`. If you need to query the device types supported by group, please use `_device_capability(group)`. 
+  distributed_c10d._get_pg_default_device(pg).type
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_shard_utils.py:58: UserWarning: `_get_pg_default_device` will be deprecated, it only stays for backward-compatibility reason. If you need to find a device for object collectives, please use `_get_object_coll_device`. If you need to query the device types supported by group, please use `_device_capability(group)`. 
+  distributed_c10d._get_pg_default_device(pg).type
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:732: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  local_shape = tensor.shape
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:749: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.shape,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:732: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  local_shape = tensor.shape
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:751: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.dtype,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:749: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.shape,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:751: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.dtype,
+
+CHECKPOINT SAVED | meld epoch=0 next_batch=4800 update=1200
+Uploading checkpoint to Kaggle...
+Uploading Dataset https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-nodesc-fullft-checkpoints ...
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/progress.json
+Uploading: 100%|██████████| 108/108 [00:00<00:00, 498B/s]
+Uploading:   0%|          | 0.00/93.0 [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/progress.json (108B)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/data_dirs.json
+Uploading: 100%|██████████| 93.0/93.0 [00:00<00:00, 389B/s]
+Uploading:   0%|          | 0.00/3.82G [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/data_dirs.json (93B)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/__1_0.distcp
+Uploading: 100%|██████████| 3.82G/3.82G [00:21<00:00, 182MB/s] 
+Uploading:   0%|          | 0.00/3.82G [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/__1_0.distcp (4GB)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/__0_0.distcp
+Uploading: 100%|██████████| 3.82G/3.82G [00:47<00:00, 80.2MB/s]
+Uploading:   0%|          | 0.00/106k [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/__0_0.distcp (4GB)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/.metadata
+Uploading: 100%|██████████| 106k/106k [00:00<00:00, 416kB/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/.metadata (103KB)
+Your dataset version has been created.
+Files are being processed...
+See at: https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-nodesc-fullft-checkpoints
+Upload done.
+epoch=1 batch=4840/4990 update=1210/1248 loss=0.0308 lr=6.28e-07 scale=4096 elapsed=185.3m
+epoch=1 batch=4880/4990 update=1220/1248 loss=0.3010 lr=4.62e-07 scale=4096 elapsed=186.8m
+epoch=1 batch=4920/4990 update=1230/1248 loss=0.2506 lr=2.97e-07 scale=4096 elapsed=188.3m
+epoch=1 batch=4960/4990 update=1240/1248 loss=0.0123 lr=1.32e-07 scale=4096 elapsed=189.8m
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_shard_utils.py:58: UserWarning: `_get_pg_default_device` will be deprecated, it only stays for backward-compatibility reason. If you need to find a device for object collectives, please use `_get_object_coll_device`. If you need to query the device types supported by group, please use `_device_capability(group)`. 
+  distributed_c10d._get_pg_default_device(pg).type
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_shard_utils.py:58: UserWarning: `_get_pg_default_device` will be deprecated, it only stays for backward-compatibility reason. If you need to find a device for object collectives, please use `_get_object_coll_device`. If you need to query the device types supported by group, please use `_device_capability(group)`. 
+  distributed_c10d._get_pg_default_device(pg).type
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:732: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  local_shape = tensor.shape
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:732: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  local_shape = tensor.shape
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:749: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.shape,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:749: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.shape,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:751: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.dtype,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:751: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.dtype,
+
+CHECKPOINT SAVED | meld epoch=1 next_batch=0 update=1248
+Uploading checkpoint to Kaggle...
+Uploading Dataset https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-nodesc-fullft-checkpoints ...
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/progress.json
+Uploading: 100%|██████████| 105/105 [00:00<00:00, 473B/s]
+Uploading:   0%|          | 0.00/93.0 [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/progress.json (105B)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/data_dirs.json
+Uploading: 100%|██████████| 93.0/93.0 [00:00<00:00, 411B/s]
+Uploading:   0%|          | 12.7M/3.82G [00:00<00:29, 127MB/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/data_dirs.json (93B)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/__1_0.distcp
+Uploading: 100%|██████████| 3.82G/3.82G [00:39<00:00, 96.4MB/s]
+Uploading:   0%|          | 12.1M/3.82G [00:00<00:31, 121MB/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/__1_0.distcp (4GB)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/__0_0.distcp
+Uploading: 100%|██████████| 3.82G/3.82G [00:22<00:00, 173MB/s]
+Uploading:   0%|          | 0.00/106k [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/__0_0.distcp (4GB)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/.metadata
+Uploading: 100%|██████████| 106k/106k [00:00<00:00, 448kB/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/meld_latest/.metadata (103KB)
+Your dataset version has been created.
+Files are being processed...
+See at: https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-nodesc-fullft-checkpoints
+Upload done.
+
+Training finished: meld
+[VALID] 0/550
+[VALID] 160/550
+[VALID] 320/550
+[VALID] 480/550
+VALID metrics: {
+  "accuracy": 0.6960873521383075,
+  "macro_f1": 0.5540372514865973,
+  "weighted_f1": 0.679825297603242,
+  "unknown_predictions": 0
+}
+[TEST] 0/1305
+[TEST] 160/1305
+[TEST] 320/1305
+[TEST] 480/1305
+[TEST] 640/1305
+[TEST] 800/1305
+[TEST] 960/1305
+[TEST] 1120/1305
+[TEST] 1280/1305
+TEST metrics: {
+  "accuracy": 0.6846743295019158,
+  "macro_f1": 0.49356352200237785,
+  "weighted_f1": 0.6650672859272145,
+  "unknown_predictions": 0
+}
+Saving final model...
+Final model saved: /kaggle/working/phi3_speechcuelm_nodesc_outputs/meld/final_model
+Uploading final model to utkarshumap/speechcuelm-phi3mini-nodesc-meld-final
+Uploading Dataset https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-nodesc-meld-final ...
+Starting upload for file /kaggle/working/phi3_speechcuelm_nodesc_outputs/meld/final_model/added_tokens.json
+Uploading: 100%|██████████| 293/293 [00:00<00:00, 1.15kB/s]
+Uploading:   0%|          | 0.00/912 [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_nodesc_outputs/meld/final_model/added_tokens.json (293B)
+Starting upload for file /kaggle/working/phi3_speechcuelm_nodesc_outputs/meld/final_model/config.json
+Uploading: 100%|██████████| 912/912 [00:00<00:00, 4.07kB/s]
+Uploading:   0%|          | 0.00/3.62M [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_nodesc_outputs/meld/final_model/config.json (912B)
+Starting upload for file /kaggle/working/phi3_speechcuelm_nodesc_outputs/meld/final_model/tokenizer.json
+Uploading: 100%|██████████| 3.62M/3.62M [00:00<00:00, 11.3MB/s]
+Uploading:   0%|          | 0.00/2.93k [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_nodesc_outputs/meld/final_model/tokenizer.json (3MB)
+Starting upload for file /kaggle/working/phi3_speechcuelm_nodesc_outputs/meld/final_model/tokenizer_config.json
+Uploading: 100%|██████████| 2.93k/2.93k [00:00<00:00, 11.6kB/s]
+Uploading:   0%|          | 0.00/569 [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_nodesc_outputs/meld/final_model/tokenizer_config.json (3KB)
+Starting upload for file /kaggle/working/phi3_speechcuelm_nodesc_outputs/meld/final_model/special_tokens_map.json
+Uploading: 100%|██████████| 569/569 [00:00<00:00, 1.97kB/s]
+Uploading:   0%|          | 0.00/407 [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_nodesc_outputs/meld/final_model/special_tokens_map.json (569B)
+Starting upload for file /kaggle/working/phi3_speechcuelm_nodesc_outputs/meld/final_model/chat_template.jinja
+Uploading: 100%|██████████| 407/407 [00:00<00:00, 1.42kB/s]
+Uploading:   0%|          | 0.00/500k [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_nodesc_outputs/meld/final_model/chat_template.jinja (407B)
+Starting upload for file /kaggle/working/phi3_speechcuelm_nodesc_outputs/meld/final_model/tokenizer.model
+Uploading: 100%|██████████| 500k/500k [00:00<00:00, 2.12MB/s]
+Uploading:   0%|          | 0.00/7.64G [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_nodesc_outputs/meld/final_model/tokenizer.model (488KB)
+Starting upload for file /kaggle/working/phi3_speechcuelm_nodesc_outputs/meld/final_model/model.safetensors
+Uploading: 100%|██████████| 7.64G/7.64G [01:46<00:00, 71.9MB/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_nodesc_outputs/meld/final_model/model.safetensors (7GB)
+Your dataset has been created.
+Files are being processed...
+See at: https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-nodesc-meld-final
+Final model upload done.
+Local final model deleted (safe on Kaggle).
+
+======================================================================
+MELD COMPLETE
+======================================================================
+{
+  "dataset": "meld",
+  "setting": "no_audio_description",
+  "valid": {
+    "accuracy": 0.6960873521383075,
+    "macro_f1": 0.5540372514865973,
+    "weighted_f1": 0.679825297603242,
+    "unknown_predictions": 0
+  },
+  "test": {
+    "accuracy": 0.6846743295019158,
+    "macro_f1": 0.49356352200237785,
+    "weighted_f1": 0.6650672859272145,
+    "unknown_predictions": 0
+  },
+  "training_updates": 1248,
+  "final_model": "utkarshumap/speechcuelm-phi3mini-nodesc-meld-final (Kaggle)"
+}
+
+ALL DONE FOR: ('meld',)
+[
+  {
+    "dataset": "meld",
+    "setting": "no_audio_description",
+    "valid": {
+      "accuracy": 0.6960873521383075,
+      "macro_f1": 0.5540372514865973,
+      "weighted_f1": 0.679825297603242,
+      "unknown_predictions": 0
+    },
+    "test": {
+      "accuracy": 0.6846743295019158,
+      "macro_f1": 0.49356352200237785,
+      "weighted_f1": 0.6650672859272145,
+      "unknown_predictions": 0
+    },
+    "training_updates": 1248,
+    "final_model": "utkarshumap/speechcuelm-phi3mini-nodesc-meld-final (Kaggle)"
+  }
+]
+
+===== Launching iemocap NO-DESC (MAX_LEN=384) =====
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+======================================================================
+Phi-3 Mini FULL FT | TEXT-ONLY (no audio description) | FSDP FULL_SHARD | effective batch 8 | datasets: ('iemocap',) | max_len: 384
+======================================================================
+../PROCESSED_DATASET/iemocap/window/False_False
+[sanity] /kaggle/working/SpeechCueLLM_nodesc/PROCESSED_DATASET/iemocap/window/False_False: 0/300 sample prompts mention acoustic terms
+[sanity] sample input:
+ Now you are expert of sentiment and emotional analysis.The following conversation noted between '### ###' involves several speakers.  ### 	 Speaker_0:"How you doing?" ### Please select the emotional label of < Speaker_0:"How you doing?"> from <happy, sad, neutral, angry, excited, frustrated> based on the context. Respond with just one label:
+
+======================================================================
+DATASET: IEMOCAP (NO DESCRIPTION)
+======================================================================
+Train/Valid/Test: 5163 647 1623
+Sample keys: ['path', 'input', 'target']
+Labels: ['angry', 'excited', 'frustrated', 'happy', 'neutral', 'sad']
+Loading Phi-3 Mini (FP16, CPU)...
+Loading checkpoint shards: 100%|██████████| 2/2 [00:30<00:00, 15.27s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:30<00:00, 15.32s/it]
+FSDP ready. GPU mem (GB): 3.82
+
+Epoch 1/1
+/kaggle/working/speechcuelm_phi3mini_nodesc_fsdp.py:517: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scheduler.step()
+/kaggle/working/speechcuelm_phi3mini_nodesc_fsdp.py:517: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scheduler.step()
+epoch=1 batch=40/2582 update=10/646 loss=0.9659 lr=1.16e-05 scale=4096 elapsed=1.5m
+epoch=1 batch=80/2582 update=20/646 loss=0.3264 lr=2.00e-05 scale=4096 elapsed=3.0m
+epoch=1 batch=120/2582 update=30/646 loss=0.0347 lr=1.96e-05 scale=4096 elapsed=4.5m
+epoch=1 batch=160/2582 update=40/646 loss=0.0994 lr=1.93e-05 scale=4096 elapsed=6.0m
+epoch=1 batch=200/2582 update=50/646 loss=0.4379 lr=1.90e-05 scale=4096 elapsed=7.5m
+epoch=1 batch=240/2582 update=60/646 loss=0.4785 lr=1.87e-05 scale=4096 elapsed=9.0m
+epoch=1 batch=280/2582 update=70/646 loss=0.0028 lr=1.84e-05 scale=4096 elapsed=10.5m
+epoch=1 batch=320/2582 update=80/646 loss=0.1373 lr=1.81e-05 scale=4096 elapsed=12.0m
+epoch=1 batch=360/2582 update=90/646 loss=0.5320 lr=1.77e-05 scale=4096 elapsed=13.5m
+epoch=1 batch=400/2582 update=100/646 loss=0.3190 lr=1.74e-05 scale=4096 elapsed=15.0m
+epoch=1 batch=440/2582 update=110/646 loss=0.2268 lr=1.71e-05 scale=4096 elapsed=16.5m
+epoch=1 batch=480/2582 update=120/646 loss=0.1640 lr=1.68e-05 scale=4096 elapsed=18.0m
+epoch=1 batch=520/2582 update=130/646 loss=0.6393 lr=1.65e-05 scale=4096 elapsed=19.5m
+epoch=1 batch=560/2582 update=140/646 loss=0.0666 lr=1.61e-05 scale=4096 elapsed=21.0m
+epoch=1 batch=600/2582 update=150/646 loss=0.1227 lr=1.58e-05 scale=4096 elapsed=22.5m
+epoch=1 batch=640/2582 update=160/646 loss=0.0004 lr=1.55e-05 scale=4096 elapsed=24.0m
+epoch=1 batch=680/2582 update=170/646 loss=0.6180 lr=1.52e-05 scale=4096 elapsed=25.5m
+epoch=1 batch=720/2582 update=180/646 loss=0.0940 lr=1.49e-05 scale=4096 elapsed=27.0m
+epoch=1 batch=760/2582 update=190/646 loss=0.3574 lr=1.45e-05 scale=4096 elapsed=28.5m
+epoch=1 batch=800/2582 update=200/646 loss=0.0061 lr=1.42e-05 scale=4096 elapsed=30.1m
+epoch=1 batch=840/2582 update=210/646 loss=1.7947 lr=1.39e-05 scale=4096 elapsed=31.6m
+epoch=1 batch=880/2582 update=220/646 loss=0.1103 lr=1.36e-05 scale=4096 elapsed=33.1m
+epoch=1 batch=920/2582 update=230/646 loss=0.3929 lr=1.33e-05 scale=4096 elapsed=34.6m
+epoch=1 batch=960/2582 update=240/646 loss=0.0062 lr=1.30e-05 scale=4096 elapsed=36.1m
+epoch=1 batch=1000/2582 update=250/646 loss=0.0257 lr=1.26e-05 scale=4096 elapsed=37.6m
+epoch=1 batch=1040/2582 update=260/646 loss=0.7679 lr=1.23e-05 scale=4096 elapsed=39.1m
+epoch=1 batch=1080/2582 update=270/646 loss=0.0182 lr=1.20e-05 scale=4096 elapsed=40.6m
+epoch=1 batch=1120/2582 update=280/646 loss=0.2512 lr=1.17e-05 scale=4096 elapsed=42.1m
+epoch=1 batch=1160/2582 update=290/646 loss=0.0877 lr=1.14e-05 scale=4096 elapsed=43.6m
+epoch=1 batch=1200/2582 update=300/646 loss=0.3062 lr=1.10e-05 scale=4096 elapsed=45.1m
+epoch=1 batch=1240/2582 update=310/646 loss=0.0873 lr=1.07e-05 scale=4096 elapsed=46.6m
+epoch=1 batch=1280/2582 update=320/646 loss=0.0449 lr=1.04e-05 scale=4096 elapsed=48.1m
+epoch=1 batch=1320/2582 update=330/646 loss=1.6707 lr=1.01e-05 scale=4096 elapsed=49.6m
+epoch=1 batch=1360/2582 update=340/646 loss=0.2728 lr=9.76e-06 scale=4096 elapsed=51.1m
+epoch=1 batch=1400/2582 update=350/646 loss=0.0343 lr=9.44e-06 scale=4096 elapsed=52.6m
+epoch=1 batch=1440/2582 update=360/646 loss=0.1241 lr=9.12e-06 scale=4096 elapsed=54.1m
+epoch=1 batch=1480/2582 update=370/646 loss=0.1241 lr=8.80e-06 scale=4096 elapsed=55.6m
+epoch=1 batch=1520/2582 update=380/646 loss=0.0270 lr=8.48e-06 scale=4096 elapsed=57.1m
+epoch=1 batch=1560/2582 update=390/646 loss=0.2992 lr=8.17e-06 scale=4096 elapsed=58.6m
+epoch=1 batch=1600/2582 update=400/646 loss=0.0541 lr=7.85e-06 scale=4096 elapsed=60.1m
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_shard_utils.py:58: UserWarning: `_get_pg_default_device` will be deprecated, it only stays for backward-compatibility reason. If you need to find a device for object collectives, please use `_get_object_coll_device`. If you need to query the device types supported by group, please use `_device_capability(group)`. 
+  distributed_c10d._get_pg_default_device(pg).type
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_shard_utils.py:58: UserWarning: `_get_pg_default_device` will be deprecated, it only stays for backward-compatibility reason. If you need to find a device for object collectives, please use `_get_object_coll_device`. If you need to query the device types supported by group, please use `_device_capability(group)`. 
+  distributed_c10d._get_pg_default_device(pg).type
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:732: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  local_shape = tensor.shape
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:732: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  local_shape = tensor.shape
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:749: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.shape,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:749: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.shape,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:751: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.dtype,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:751: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.dtype,
+
+CHECKPOINT SAVED | iemocap epoch=0 next_batch=1600 update=400
+Uploading checkpoint to Kaggle...
+Uploading Dataset https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-nodesc-fullft-checkpoints ...
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/progress.json
+Uploading: 100%|██████████| 212/212 [00:00<00:00, 772B/s]
+Uploading:   0%|          | 0.00/99.0 [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/progress.json (212B)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/data_dirs.json
+Uploading: 100%|██████████| 99.0/99.0 [00:00<00:00, 414B/s]
+Uploading:   0%|          | 0.00/3.82G [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/data_dirs.json (99B)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/iemocap_latest/__1_0.distcp
+Uploading: 100%|██████████| 3.82G/3.82G [00:26<00:00, 142MB/s] 
+Uploading:   0%|          | 0.00/3.82G [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/iemocap_latest/__1_0.distcp (4GB)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/iemocap_latest/__0_0.distcp
+Uploading: 100%|██████████| 3.82G/3.82G [00:44<00:00, 86.6MB/s]
+Uploading:   0%|          | 0.00/106k [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/iemocap_latest/__0_0.distcp (4GB)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/iemocap_latest/.metadata
+Uploading: 100%|██████████| 106k/106k [00:00<00:00, 432kB/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/iemocap_latest/.metadata (103KB)
+Your dataset version has been created.
+Files are being processed...
+See at: https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-nodesc-fullft-checkpoints
+Upload done.
+epoch=1 batch=1640/2582 update=410/646 loss=0.0301 lr=7.53e-06 scale=4096 elapsed=63.4m
+epoch=1 batch=1680/2582 update=420/646 loss=0.2350 lr=7.21e-06 scale=4096 elapsed=64.9m
+epoch=1 batch=1720/2582 update=430/646 loss=0.2222 lr=6.89e-06 scale=4096 elapsed=66.4m
+epoch=1 batch=1760/2582 update=440/646 loss=0.1915 lr=6.57e-06 scale=4096 elapsed=67.9m
+epoch=1 batch=1800/2582 update=450/646 loss=0.0933 lr=6.25e-06 scale=4096 elapsed=69.4m
+epoch=1 batch=1840/2582 update=460/646 loss=0.2990 lr=5.93e-06 scale=4096 elapsed=70.9m
+epoch=1 batch=1880/2582 update=470/646 loss=0.7588 lr=5.61e-06 scale=4096 elapsed=72.4m
+epoch=1 batch=1920/2582 update=480/646 loss=0.0341 lr=5.30e-06 scale=4096 elapsed=73.9m
+epoch=1 batch=1960/2582 update=490/646 loss=0.0018 lr=4.98e-06 scale=4096 elapsed=75.4m
+epoch=1 batch=2000/2582 update=500/646 loss=0.1764 lr=4.66e-06 scale=4096 elapsed=76.9m
+epoch=1 batch=2040/2582 update=510/646 loss=0.0038 lr=4.34e-06 scale=4096 elapsed=78.4m
+epoch=1 batch=2080/2582 update=520/646 loss=0.0752 lr=4.02e-06 scale=4096 elapsed=79.9m
+epoch=1 batch=2120/2582 update=530/646 loss=0.2353 lr=3.70e-06 scale=4096 elapsed=81.4m
+epoch=1 batch=2160/2582 update=540/646 loss=0.1182 lr=3.38e-06 scale=4096 elapsed=82.9m
+epoch=1 batch=2200/2582 update=550/646 loss=0.2096 lr=3.06e-06 scale=4096 elapsed=84.5m
+epoch=1 batch=2240/2582 update=560/646 loss=0.0657 lr=2.74e-06 scale=4096 elapsed=86.0m
+epoch=1 batch=2280/2582 update=570/646 loss=0.0626 lr=2.42e-06 scale=4096 elapsed=87.5m
+epoch=1 batch=2320/2582 update=580/646 loss=0.0615 lr=2.11e-06 scale=4096 elapsed=89.0m
+epoch=1 batch=2360/2582 update=590/646 loss=0.0766 lr=1.79e-06 scale=4096 elapsed=90.5m
+epoch=1 batch=2400/2582 update=600/646 loss=0.0245 lr=1.47e-06 scale=4096 elapsed=92.0m
+epoch=1 batch=2440/2582 update=610/646 loss=0.3226 lr=1.15e-06 scale=4096 elapsed=93.5m
+epoch=1 batch=2480/2582 update=620/646 loss=0.1430 lr=8.29e-07 scale=4096 elapsed=95.0m
+epoch=1 batch=2520/2582 update=630/646 loss=0.0787 lr=5.10e-07 scale=4096 elapsed=96.5m
+epoch=1 batch=2560/2582 update=640/646 loss=0.0100 lr=1.91e-07 scale=4096 elapsed=98.0m
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_shard_utils.py:58: UserWarning: `_get_pg_default_device` will be deprecated, it only stays for backward-compatibility reason. If you need to find a device for object collectives, please use `_get_object_coll_device`. If you need to query the device types supported by group, please use `_device_capability(group)`. 
+  distributed_c10d._get_pg_default_device(pg).type
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_shard_utils.py:58: UserWarning: `_get_pg_default_device` will be deprecated, it only stays for backward-compatibility reason. If you need to find a device for object collectives, please use `_get_object_coll_device`. If you need to query the device types supported by group, please use `_device_capability(group)`. 
+  distributed_c10d._get_pg_default_device(pg).type
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:732: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  local_shape = tensor.shape
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:732: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  local_shape = tensor.shape
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:749: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.shape,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:751: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.dtype,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:749: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.shape,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:751: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.dtype,
+
+CHECKPOINT SAVED | iemocap epoch=1 next_batch=0 update=646
+Uploading checkpoint to Kaggle...
+Uploading Dataset https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-nodesc-fullft-checkpoints ...
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/progress.json
+Uploading: 100%|██████████| 209/209 [00:00<00:00, 894B/s]
+Uploading:   0%|          | 0.00/99.0 [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/progress.json (209B)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/data_dirs.json
+Uploading: 100%|██████████| 99.0/99.0 [00:00<00:00, 315B/s]
+Uploading:   0%|          | 0.00/3.82G [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/data_dirs.json (99B)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/iemocap_latest/__1_0.distcp
+Uploading: 100%|██████████| 3.82G/3.82G [00:36<00:00, 105MB/s] 
+Uploading:   0%|          | 0.00/3.82G [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/iemocap_latest/__1_0.distcp (4GB)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/iemocap_latest/__0_0.distcp
+Uploading: 100%|██████████| 3.82G/3.82G [00:22<00:00, 173MB/s]
+Uploading:   0%|          | 0.00/106k [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/iemocap_latest/__0_0.distcp (4GB)
+Starting upload for file /kaggle/working/speechcuelm_nodesc_ckpt_store/iemocap_latest/.metadata
+Uploading: 100%|██████████| 106k/106k [00:00<00:00, 476kB/s]
+Upload successful: /kaggle/working/speechcuelm_nodesc_ckpt_store/iemocap_latest/.metadata (103KB)
+Your dataset version has been created.
+Files are being processed...
+See at: https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-nodesc-fullft-checkpoints
+Upload done.
+
+Training finished: iemocap
+[VALID] 0/324
+[VALID] 160/324
+[VALID] 320/324
+VALID metrics: {
+  "accuracy": 0.6414219474497682,
+  "macro_f1": 0.6302536535120081,
+  "weighted_f1": 0.6358842417365645,
+  "unknown_predictions": 0
+}
+[TEST] 0/812
+[TEST] 160/812
+[TEST] 320/812
+[TEST] 480/812
+[TEST] 640/812
+[TEST] 800/812
+TEST metrics: {
+  "accuracy": 0.7104128157732594,
+  "macro_f1": 0.7000937942755739,
+  "weighted_f1": 0.7106201190387096,
+  "unknown_predictions": 0
+}
+Saving final model...
+Final model saved: /kaggle/working/phi3_speechcuelm_nodesc_outputs/iemocap/final_model
+Uploading final model to utkarshumap/speechcuelm-phi3mini-nodesc-iemocap-final
+Uploading Dataset https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-nodesc-iemocap-final ...
+Starting upload for file /kaggle/working/phi3_speechcuelm_nodesc_outputs/iemocap/final_model/added_tokens.json
+Uploading: 100%|██████████| 293/293 [00:00<00:00, 1.24kB/s]
+Uploading:   0%|          | 0.00/912 [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_nodesc_outputs/iemocap/final_model/added_tokens.json (293B)
+Starting upload for file /kaggle/working/phi3_speechcuelm_nodesc_outputs/iemocap/final_model/config.json
+Uploading: 100%|██████████| 912/912 [00:00<00:00, 3.73kB/s]
+Uploading:   0%|          | 0.00/3.62M [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_nodesc_outputs/iemocap/final_model/config.json (912B)
+Starting upload for file /kaggle/working/phi3_speechcuelm_nodesc_outputs/iemocap/final_model/tokenizer.json
+Uploading: 100%|██████████| 3.62M/3.62M [00:00<00:00, 14.3MB/s]
+Uploading:   0%|          | 0.00/2.93k [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_nodesc_outputs/iemocap/final_model/tokenizer.json (3MB)
+Starting upload for file /kaggle/working/phi3_speechcuelm_nodesc_outputs/iemocap/final_model/tokenizer_config.json
+Uploading: 100%|██████████| 2.93k/2.93k [00:00<00:00, 12.9kB/s]
+Uploading:   0%|          | 0.00/569 [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_nodesc_outputs/iemocap/final_model/tokenizer_config.json (3KB)
+Starting upload for file /kaggle/working/phi3_speechcuelm_nodesc_outputs/iemocap/final_model/special_tokens_map.json
+Uploading: 100%|██████████| 569/569 [00:00<00:00, 2.46kB/s]
+Uploading:   0%|          | 0.00/407 [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_nodesc_outputs/iemocap/final_model/special_tokens_map.json (569B)
+Starting upload for file /kaggle/working/phi3_speechcuelm_nodesc_outputs/iemocap/final_model/chat_template.jinja
+Uploading: 100%|██████████| 407/407 [00:00<00:00, 1.82kB/s]
+Uploading:   0%|          | 0.00/500k [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_nodesc_outputs/iemocap/final_model/chat_template.jinja (407B)
+Starting upload for file /kaggle/working/phi3_speechcuelm_nodesc_outputs/iemocap/final_model/tokenizer.model
+Uploading: 100%|██████████| 500k/500k [00:00<00:00, 2.01MB/s]
+Uploading:   0%|          | 0.00/7.64G [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_nodesc_outputs/iemocap/final_model/tokenizer.model (488KB)
+Starting upload for file /kaggle/working/phi3_speechcuelm_nodesc_outputs/iemocap/final_model/model.safetensors
+Uploading: 100%|██████████| 7.64G/7.64G [01:18<00:00, 97.1MB/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_nodesc_outputs/iemocap/final_model/model.safetensors (7GB)
+Your dataset has been created.
+Files are being processed...
+See at: https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-nodesc-iemocap-final
+Final model upload done.
+Local final model deleted (safe on Kaggle).
+
+======================================================================
+IEMOCAP COMPLETE
+======================================================================
+{
+  "dataset": "iemocap",
+  "setting": "no_audio_description",
+  "valid": {
+    "accuracy": 0.6414219474497682,
+    "macro_f1": 0.6302536535120081,
+    "weighted_f1": 0.6358842417365645,
+    "unknown_predictions": 0
+  },
+  "test": {
+    "accuracy": 0.7104128157732594,
+    "macro_f1": 0.7000937942755739,
+    "weighted_f1": 0.7106201190387096,
+    "unknown_predictions": 0
+  },
+  "training_updates": 646,
+  "final_model": "utkarshumap/speechcuelm-phi3mini-nodesc-iemocap-final (Kaggle)"
+}
+
+ALL DONE FOR: ('iemocap',)
+[
+  {
+    "dataset": "iemocap",
+    "setting": "no_audio_description",
+    "valid": {
+      "accuracy": 0.6414219474497682,
+      "macro_f1": 0.6302536535120081,
+      "weighted_f1": 0.6358842417365645,
+      "unknown_predictions": 0
+    },
+    "test": {
+      "accuracy": 0.7104128157732594,
+      "macro_f1": 0.7000937942755739,
+      "weighted_f1": 0.7106201190387096,
+      "unknown_predictions": 0
+    },
+    "training_updates": 646,
+    "final_model": "utkarshumap/speechcuelm-phi3mini-nodesc-iemocap-final (Kaggle)"
+  }
+]
+✅ ALL FINISHED. Outputs: /kaggle/working/phi3_speechcuelm_nodesc_outputs

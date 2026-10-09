@@ -1,0 +1,417 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.0/44.0 kB 1.1 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 394.3/394.3 kB 7.3 MB/s eta 0:00:00:00:01
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 83.3 MB/s eta 0:00:00:00:010:01
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.1/43.1 MB 47.6 MB/s eta 0:00:00:00:0100:01
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 23.8 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 77.0 MB/s eta 0:00:00:00:01
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+gradio 6.26.0 requires huggingface-hub<2.0,>=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.
+diffusers 0.40.0 requires huggingface-hub<2.0,>=1.23.0, but you have huggingface-hub 0.36.2 which is incompatible.
+Note: you may need to restart the kernel to use updated packages.
+GPUs: 2
+0 Tesla T4
+1 Tesla T4
+✅ Script written and syntax OK: /kaggle/working/speechcuelm_phi3mini_final_fsdp.py
+
+===== Launching meld (MAX_LEN=512) =====
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+======================================================================
+Phi-3 Mini FULL FT | FSDP FULL_SHARD | AdamW8bit | effective batch 8 | datasets: ('meld',) | max_len: 512
+======================================================================
+Cloning into '/kaggle/working/SpeechCueLLM'...
+../PROCESSED_DATASET/meld/window/True_False
+Persistent checkpoint restored: ['meld_latest', 'progress.json']
+
+======================================================================
+DATASET: MELD
+======================================================================
+Train/Valid/Test: 9980 1099 2610
+Sample keys: ['path', 'input', 'target']
+Labels: ['angry', 'disgust', 'fear', 'joyful', 'neutral', 'sad', 'surprise']
+Loading Phi-3 Mini (FP16, CPU)...
+Fetching 2 files: 100%|██████████| 2/2 [00:28<00:00, 14.16s/it]
+Fetching 2 files: 100%|██████████| 2/2 [00:28<00:00, 14.14s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:17<00:00,  8.76s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:17<00:00,  8.77s/it]
+FSDP ready. GPU mem (GB): 3.82
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_shard_utils.py:58: UserWarning: `_get_pg_default_device` will be deprecated, it only stays for backward-compatibility reason. If you need to find a device for object collectives, please use `_get_object_coll_device`. If you need to query the device types supported by group, please use `_device_capability(group)`. 
+  distributed_c10d._get_pg_default_device(pg).type
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_shard_utils.py:58: UserWarning: `_get_pg_default_device` will be deprecated, it only stays for backward-compatibility reason. If you need to find a device for object collectives, please use `_get_object_coll_device`. If you need to query the device types supported by group, please use `_device_capability(group)`. 
+  distributed_c10d._get_pg_default_device(pg).type
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:732: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  local_shape = tensor.shape
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:732: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  local_shape = tensor.shape
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:749: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.shape,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:749: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.shape,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:751: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.dtype,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:751: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.dtype,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/checkpoint/planner_helpers.py:489: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  device = getattr(value, "device", None)
+/usr/local/lib/python3.13/dist-packages/torch/distributed/checkpoint/planner_helpers.py:489: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  device = getattr(value, "device", None)
+/usr/local/lib/python3.13/dist-packages/torch/distributed/checkpoint/default_planner.py:483: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  and md.size != obj.size()
+/usr/local/lib/python3.13/dist-packages/torch/distributed/checkpoint/default_planner.py:483: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  and md.size != obj.size()
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:634: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  param_numel = param.size().numel()
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:635: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  dim_0_size = param.size()[0]
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:634: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  param_numel = param.size().numel()
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:661: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor = tensor.narrow(0, 0, param_numel).reshape(param.size())
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:635: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  dim_0_size = param.size()[0]
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:661: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor = tensor.narrow(0, 0, param_numel).reshape(param.size())
+/kaggle/working/speechcuelm_phi3mini_final_fsdp.py:443: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scheduler.step()
+/kaggle/working/speechcuelm_phi3mini_final_fsdp.py:443: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scheduler.step()
+RESUMED epoch=1 batch=0 update=1248 (optimizer moments restart fresh)
+
+Training finished: meld
+[VALID] 0/550
+[VALID] 160/550
+[VALID] 320/550
+[VALID] 480/550
+VALID metrics: {
+  "accuracy": 0.6951774340309372,
+  "macro_f1": 0.54563046887932,
+  "weighted_f1": 0.6786382104531122,
+  "unknown_predictions": 0
+}
+[TEST] 0/1305
+[TEST] 160/1305
+[TEST] 320/1305
+[TEST] 480/1305
+[TEST] 640/1305
+[TEST] 800/1305
+[TEST] 960/1305
+[TEST] 1120/1305
+[TEST] 1280/1305
+TEST metrics: {
+  "accuracy": 0.6908045977011494,
+  "macro_f1": 0.5015681303831786,
+  "weighted_f1": 0.6697370009462941,
+  "unknown_predictions": 0
+}
+Saving final model...
+Final model saved: /kaggle/working/phi3_speechcuelm_outputs/meld/final_model
+Uploading final model to utkarshumap/speechcuelm-phi3mini-meld-final
+Uploading Dataset https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-meld-final ...
+Starting upload for file /kaggle/working/phi3_speechcuelm_outputs/meld/final_model/special_tokens_map.json
+Uploading: 100%|██████████| 569/569 [00:00<00:00, 2.08kB/s]
+Uploading:   0%|          | 0.00/500k [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_outputs/meld/final_model/special_tokens_map.json (569B)
+Starting upload for file /kaggle/working/phi3_speechcuelm_outputs/meld/final_model/tokenizer.model
+Uploading: 100%|██████████| 500k/500k [00:00<00:00, 2.24MB/s]
+Uploading:   0%|          | 0.00/407 [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_outputs/meld/final_model/tokenizer.model (488KB)
+Starting upload for file /kaggle/working/phi3_speechcuelm_outputs/meld/final_model/chat_template.jinja
+Uploading: 100%|██████████| 407/407 [00:00<00:00, 1.81kB/s]
+Uploading:   0%|          | 0.00/2.93k [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_outputs/meld/final_model/chat_template.jinja (407B)
+Starting upload for file /kaggle/working/phi3_speechcuelm_outputs/meld/final_model/tokenizer_config.json
+Uploading: 100%|██████████| 2.93k/2.93k [00:00<00:00, 10.9kB/s]
+Uploading:   0%|          | 0.00/293 [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_outputs/meld/final_model/tokenizer_config.json (3KB)
+Starting upload for file /kaggle/working/phi3_speechcuelm_outputs/meld/final_model/added_tokens.json
+Uploading: 100%|██████████| 293/293 [00:00<00:00, 1.23kB/s]
+Uploading:   0%|          | 0.00/3.62M [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_outputs/meld/final_model/added_tokens.json (293B)
+Starting upload for file /kaggle/working/phi3_speechcuelm_outputs/meld/final_model/tokenizer.json
+Uploading: 100%|██████████| 3.62M/3.62M [00:00<00:00, 14.2MB/s]
+Uploading:   0%|          | 0.00/7.64G [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_outputs/meld/final_model/tokenizer.json (3MB)
+Starting upload for file /kaggle/working/phi3_speechcuelm_outputs/meld/final_model/model.safetensors
+Uploading: 100%|██████████| 7.64G/7.64G [02:05<00:00, 61.1MB/s]
+Uploading:   0%|          | 0.00/912 [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_outputs/meld/final_model/model.safetensors (7GB)
+Starting upload for file /kaggle/working/phi3_speechcuelm_outputs/meld/final_model/config.json
+Uploading: 100%|██████████| 912/912 [00:00<00:00, 4.30kB/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_outputs/meld/final_model/config.json (912B)
+Your dataset has been created.
+Files are being processed...
+See at: https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-meld-final
+Final model upload done.
+
+======================================================================
+MELD COMPLETE
+======================================================================
+{
+  "dataset": "meld",
+  "valid": {
+    "accuracy": 0.6951774340309372,
+    "macro_f1": 0.54563046887932,
+    "weighted_f1": 0.6786382104531122,
+    "unknown_predictions": 0
+  },
+  "test": {
+    "accuracy": 0.6908045977011494,
+    "macro_f1": 0.5015681303831786,
+    "weighted_f1": 0.6697370009462941,
+    "unknown_predictions": 0
+  },
+  "training_updates": 1248,
+  "final_model": "/kaggle/working/phi3_speechcuelm_outputs/meld/final_model"
+}
+
+ALL DONE FOR: ('meld',)
+[
+  {
+    "dataset": "meld",
+    "valid": {
+      "accuracy": 0.6951774340309372,
+      "macro_f1": 0.54563046887932,
+      "weighted_f1": 0.6786382104531122,
+      "unknown_predictions": 0
+    },
+    "test": {
+      "accuracy": 0.6908045977011494,
+      "macro_f1": 0.5015681303831786,
+      "weighted_f1": 0.6697370009462941,
+      "unknown_predictions": 0
+    },
+    "training_updates": 1248,
+    "final_model": "/kaggle/working/phi3_speechcuelm_outputs/meld/final_model"
+  }
+]
+
+===== Launching iemocap (MAX_LEN=384) =====
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+======================================================================
+Phi-3 Mini FULL FT | FSDP FULL_SHARD | AdamW8bit | effective batch 8 | datasets: ('iemocap',) | max_len: 384
+======================================================================
+../PROCESSED_DATASET/iemocap/window/True_False
+
+======================================================================
+DATASET: IEMOCAP
+======================================================================
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Train/Valid/Test: 5163 647 1623
+Sample keys: ['path', 'input', 'target']
+Labels: ['angry', 'excited', 'frustrated', 'happy', 'neutral', 'sad']
+Loading Phi-3 Mini (FP16, CPU)...
+Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.05s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  9.93s/it]
+FSDP ready. GPU mem (GB): 3.82
+
+Epoch 1/1
+/kaggle/working/speechcuelm_phi3mini_final_fsdp.py:469: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scheduler.step()
+/kaggle/working/speechcuelm_phi3mini_final_fsdp.py:469: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scheduler.step()
+epoch=1 batch=40/2582 update=10/646 loss=1.1478 lr=1.16e-05 scale=4096 elapsed=1.5m
+epoch=1 batch=80/2582 update=20/646 loss=0.7218 lr=2.00e-05 scale=4096 elapsed=3.0m
+epoch=1 batch=120/2582 update=30/646 loss=0.0287 lr=1.96e-05 scale=4096 elapsed=4.5m
+epoch=1 batch=160/2582 update=40/646 loss=0.0697 lr=1.93e-05 scale=4096 elapsed=6.0m
+epoch=1 batch=200/2582 update=50/646 loss=0.6512 lr=1.90e-05 scale=4096 elapsed=7.5m
+epoch=1 batch=240/2582 update=60/646 loss=0.1964 lr=1.87e-05 scale=4096 elapsed=9.0m
+epoch=1 batch=280/2582 update=70/646 loss=0.0038 lr=1.84e-05 scale=4096 elapsed=10.5m
+epoch=1 batch=320/2582 update=80/646 loss=0.2196 lr=1.81e-05 scale=4096 elapsed=11.9m
+epoch=1 batch=360/2582 update=90/646 loss=0.5557 lr=1.77e-05 scale=4096 elapsed=13.4m
+epoch=1 batch=400/2582 update=100/646 loss=0.2482 lr=1.74e-05 scale=4096 elapsed=14.9m
+epoch=1 batch=440/2582 update=110/646 loss=0.1932 lr=1.71e-05 scale=4096 elapsed=16.4m
+epoch=1 batch=480/2582 update=120/646 loss=0.1444 lr=1.68e-05 scale=4096 elapsed=17.9m
+epoch=1 batch=520/2582 update=130/646 loss=0.5223 lr=1.65e-05 scale=4096 elapsed=19.4m
+epoch=1 batch=560/2582 update=140/646 loss=0.1070 lr=1.61e-05 scale=4096 elapsed=20.9m
+epoch=1 batch=600/2582 update=150/646 loss=0.2856 lr=1.58e-05 scale=4096 elapsed=22.4m
+epoch=1 batch=640/2582 update=160/646 loss=0.0006 lr=1.55e-05 scale=4096 elapsed=23.9m
+epoch=1 batch=680/2582 update=170/646 loss=0.0671 lr=1.52e-05 scale=4096 elapsed=25.4m
+epoch=1 batch=720/2582 update=180/646 loss=0.0553 lr=1.49e-05 scale=4096 elapsed=26.9m
+epoch=1 batch=760/2582 update=190/646 loss=0.8747 lr=1.45e-05 scale=4096 elapsed=28.4m
+epoch=1 batch=800/2582 update=200/646 loss=0.0225 lr=1.42e-05 scale=4096 elapsed=29.9m
+epoch=1 batch=840/2582 update=210/646 loss=0.9266 lr=1.39e-05 scale=4096 elapsed=31.4m
+epoch=1 batch=880/2582 update=220/646 loss=0.2519 lr=1.36e-05 scale=4096 elapsed=32.9m
+epoch=1 batch=920/2582 update=230/646 loss=0.2808 lr=1.33e-05 scale=4096 elapsed=34.4m
+epoch=1 batch=960/2582 update=240/646 loss=0.0137 lr=1.30e-05 scale=4096 elapsed=35.9m
+epoch=1 batch=1000/2582 update=250/646 loss=0.0849 lr=1.26e-05 scale=4096 elapsed=37.4m
+epoch=1 batch=1040/2582 update=260/646 loss=0.2446 lr=1.23e-05 scale=4096 elapsed=38.9m
+epoch=1 batch=1080/2582 update=270/646 loss=0.0134 lr=1.20e-05 scale=4096 elapsed=40.4m
+epoch=1 batch=1120/2582 update=280/646 loss=0.1654 lr=1.17e-05 scale=4096 elapsed=41.8m
+epoch=1 batch=1160/2582 update=290/646 loss=0.0457 lr=1.14e-05 scale=4096 elapsed=43.3m
+epoch=1 batch=1200/2582 update=300/646 loss=0.4080 lr=1.10e-05 scale=4096 elapsed=44.8m
+epoch=1 batch=1240/2582 update=310/646 loss=0.0953 lr=1.07e-05 scale=4096 elapsed=46.3m
+epoch=1 batch=1280/2582 update=320/646 loss=0.0355 lr=1.04e-05 scale=4096 elapsed=47.8m
+epoch=1 batch=1320/2582 update=330/646 loss=1.3240 lr=1.01e-05 scale=4096 elapsed=49.3m
+epoch=1 batch=1360/2582 update=340/646 loss=0.3606 lr=9.76e-06 scale=4096 elapsed=50.8m
+Uploading:  52%|█████▏    | 2.00G/3.82G [00:18<00:15, 116MB/s] 
+epoch=1 batch=1720/2582 update=430/646 loss=0.3330 lr=6.89e-06 scale=4096 elapsed=66.0m
+epoch=1 batch=1760/2582 update=440/646 loss=0.2534 lr=6.57e-06 scale=4096 elapsed=67.5m
+epoch=1 batch=1800/2582 update=450/646 loss=0.3958 lr=6.25e-06 scale=4096 elapsed=69.0m
+epoch=1 batch=1840/2582 update=460/646 loss=0.3754 lr=5.93e-06 scale=4096 elapsed=70.5m
+epoch=1 batch=1880/2582 update=470/646 loss=0.8895 lr=5.61e-06 scale=4096 elapsed=72.0m
+epoch=1 batch=1920/2582 update=480/646 loss=0.0438 lr=5.30e-06 scale=4096 elapsed=73.5m
+epoch=1 batch=1960/2582 update=490/646 loss=0.0020 lr=4.98e-06 scale=4096 elapsed=75.0m
+epoch=1 batch=2000/2582 update=500/646 loss=0.5035 lr=4.66e-06 scale=4096 elapsed=76.5m
+epoch=1 batch=2040/2582 update=510/646 loss=0.0032 lr=4.34e-06 scale=4096 elapsed=78.0m
+epoch=1 batch=2080/2582 update=520/646 loss=0.1286 lr=4.02e-06 scale=4096 elapsed=79.4m
+epoch=1 batch=2120/2582 update=530/646 loss=0.1724 lr=3.70e-06 scale=4096 elapsed=80.9m
+epoch=1 batch=2160/2582 update=540/646 loss=0.1913 lr=3.38e-06 scale=4096 elapsed=82.4m
+epoch=1 batch=2200/2582 update=550/646 loss=0.2491 lr=3.06e-06 scale=4096 elapsed=83.9m
+epoch=1 batch=2240/2582 update=560/646 loss=0.0448 lr=2.74e-06 scale=4096 elapsed=85.4m
+epoch=1 batch=2280/2582 update=570/646 loss=0.0251 lr=2.42e-06 scale=4096 elapsed=86.9m
+epoch=1 batch=2320/2582 update=580/646 loss=0.1820 lr=2.11e-06 scale=4096 elapsed=88.4m
+epoch=1 batch=2360/2582 update=590/646 loss=0.0366 lr=1.79e-06 scale=4096 elapsed=89.9m
+epoch=1 batch=2400/2582 update=600/646 loss=0.0199 lr=1.47e-06 scale=4096 elapsed=91.4m
+epoch=1 batch=2440/2582 update=610/646 loss=0.3404 lr=1.15e-06 scale=4096 elapsed=92.9m
+epoch=1 batch=2480/2582 update=620/646 loss=0.2799 lr=8.29e-07 scale=4096 elapsed=94.4m
+epoch=1 batch=2520/2582 update=630/646 loss=0.0490 lr=5.10e-07 scale=4096 elapsed=95.9m
+epoch=1 batch=2560/2582 update=640/646 loss=0.0052 lr=1.91e-07 scale=4096 elapsed=97.4m
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_shard_utils.py:58: UserWarning: `_get_pg_default_device` will be deprecated, it only stays for backward-compatibility reason. If you need to find a device for object collectives, please use `_get_object_coll_device`. If you need to query the device types supported by group, please use `_device_capability(group)`. 
+  distributed_c10d._get_pg_default_device(pg).type
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_shard_utils.py:58: UserWarning: `_get_pg_default_device` will be deprecated, it only stays for backward-compatibility reason. If you need to find a device for object collectives, please use `_get_object_coll_device`. If you need to query the device types supported by group, please use `_device_capability(group)`. 
+  distributed_c10d._get_pg_default_device(pg).type
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:732: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  local_shape = tensor.shape
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:749: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.shape,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:751: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.dtype,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:732: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  local_shape = tensor.shape
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:749: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.shape,
+/usr/local/lib/python3.13/dist-packages/torch/distributed/fsdp/_state_dict_utils.py:751: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.dtype,
+
+CHECKPOINT SAVED | iemocap epoch=1 next_batch=0 update=646
+Uploading checkpoint to Kaggle...
+Uploading Dataset https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-fullft-checkpoints ...
+Starting upload for file /kaggle/working/speechcuelm_ckpt_store/progress.json
+Uploading: 100%|██████████| 209/209 [00:00<00:00, 848B/s]
+Uploading:   0%|          | 0.00/3.82G [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_ckpt_store/progress.json (209B)
+Starting upload for file /kaggle/working/speechcuelm_ckpt_store/iemocap_latest/__1_0.distcp
+Uploading: 100%|██████████| 3.82G/3.82G [00:31<00:00, 122MB/s] 
+Uploading:   0%|          | 0.00/3.82G [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_ckpt_store/iemocap_latest/__1_0.distcp (4GB)
+Starting upload for file /kaggle/working/speechcuelm_ckpt_store/iemocap_latest/__0_0.distcp
+Uploading: 100%|██████████| 3.82G/3.82G [00:46<00:00, 81.5MB/s]
+Uploading:   0%|          | 0.00/106k [00:00<?, ?B/s]
+Upload successful: /kaggle/working/speechcuelm_ckpt_store/iemocap_latest/__0_0.distcp (4GB)
+Starting upload for file /kaggle/working/speechcuelm_ckpt_store/iemocap_latest/.metadata
+Uploading: 100%|██████████| 106k/106k [00:00<00:00, 467kB/s]
+Upload successful: /kaggle/working/speechcuelm_ckpt_store/iemocap_latest/.metadata (103KB)
+Your dataset version has been created.
+Files are being processed...
+See at: https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-fullft-checkpoints
+Upload done.
+
+Training finished: iemocap
+[VALID] 0/324
+[VALID] 160/324
+[VALID] 320/324
+VALID metrics: {
+  "accuracy": 0.6676970633693973,
+  "macro_f1": 0.6500047757035322,
+  "weighted_f1": 0.6621732941719168,
+  "unknown_predictions": 0
+}
+[TEST] 0/812
+[TEST] 160/812
+[TEST] 320/812
+[TEST] 480/812
+[TEST] 640/812
+[TEST] 800/812
+TEST metrics: {
+  "accuracy": 0.7134935304990758,
+  "macro_f1": 0.704871212514791,
+  "weighted_f1": 0.7129618711660843,
+  "unknown_predictions": 0
+}
+Saving final model...
+Final model saved: /kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model
+Uploading final model to utkarshumap/speechcuelm-phi3mini-iemocap-final
+Uploading Dataset https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-iemocap-final ...
+Starting upload for file /kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model/special_tokens_map.json
+Uploading: 100%|██████████| 569/569 [00:00<00:00, 2.24kB/s]
+Uploading:   0%|          | 0.00/500k [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model/special_tokens_map.json (569B)
+Starting upload for file /kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model/tokenizer.model
+Uploading: 100%|██████████| 500k/500k [00:00<00:00, 2.14MB/s]
+Uploading:   0%|          | 0.00/407 [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model/tokenizer.model (488KB)
+Starting upload for file /kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model/chat_template.jinja
+Uploading: 100%|██████████| 407/407 [00:00<00:00, 1.96kB/s]
+Uploading:   0%|          | 0.00/2.93k [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model/chat_template.jinja (407B)
+Starting upload for file /kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model/tokenizer_config.json
+Uploading: 100%|██████████| 2.93k/2.93k [00:00<00:00, 13.1kB/s]
+Uploading:   0%|          | 0.00/293 [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model/tokenizer_config.json (3KB)
+Starting upload for file /kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model/added_tokens.json
+Uploading: 100%|██████████| 293/293 [00:00<00:00, 1.31kB/s]
+Uploading:   0%|          | 0.00/3.62M [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model/added_tokens.json (293B)
+Starting upload for file /kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model/tokenizer.json
+Uploading: 100%|██████████| 3.62M/3.62M [00:00<00:00, 14.7MB/s]
+Uploading:   0%|          | 0.00/7.64G [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model/tokenizer.json (3MB)
+Starting upload for file /kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model/model.safetensors
+Uploading: 100%|██████████| 7.64G/7.64G [01:08<00:00, 112MB/s]     
+Uploading:   0%|          | 0.00/912 [00:00<?, ?B/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model/model.safetensors (7GB)
+Starting upload for file /kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model/config.json
+Uploading: 100%|██████████| 912/912 [00:00<00:00, 4.17kB/s]
+Upload successful: /kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model/config.json (912B)
+Your dataset has been created.
+Files are being processed...
+See at: https://kaggle.com/datasets/utkarshumap/speechcuelm-phi3mini-iemocap-final
+Final model upload done.
+
+======================================================================
+IEMOCAP COMPLETE
+======================================================================
+{
+  "dataset": "iemocap",
+  "valid": {
+    "accuracy": 0.6676970633693973,
+    "macro_f1": 0.6500047757035322,
+    "weighted_f1": 0.6621732941719168,
+    "unknown_predictions": 0
+  },
+  "test": {
+    "accuracy": 0.7134935304990758,
+    "macro_f1": 0.704871212514791,
+    "weighted_f1": 0.7129618711660843,
+    "unknown_predictions": 0
+  },
+  "training_updates": 646,
+  "final_model": "/kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model"
+}
+
+ALL DONE FOR: ('iemocap',)
+[
+  {
+    "dataset": "iemocap",
+    "valid": {
+      "accuracy": 0.6676970633693973,
+      "macro_f1": 0.6500047757035322,
+      "weighted_f1": 0.6621732941719168,
+      "unknown_predictions": 0
+    },
+    "test": {
+      "accuracy": 0.7134935304990758,
+      "macro_f1": 0.704871212514791,
+      "weighted_f1": 0.7129618711660843,
+      "unknown_predictions": 0
+    },
+    "training_updates": 646,
+    "final_model": "/kaggle/working/phi3_speechcuelm_outputs/iemocap/final_model"
+  }
+]
+✅ ALL FINISHED. Outputs: /kaggle/working/phi3_speechcuelm_outputs
