@@ -146,11 +146,12 @@ The two Phi-3 scripts in `notebooks/` are designed to run as cells in a Kaggle
 notebook. They install their Python dependencies, clone SpeechCueLLM into
 `/kaggle/working`, and prepare the processed dataset splits. Run them in Kaggle
 with internet access, two NVIDIA T4 GPUs, and access to MELD and IEMOCAP.
-Attach or stage the raw datasets where the upstream `data_process.py` script
-expects them; the Phi-3 scripts do not include the datasets. IEMOCAP requires
-a license request. KaggleHub checkpoint and final-model uploads are enabled
-by default; configure Kaggle authentication for these uploads, or disable
-`UPLOAD_CHECKPOINTS` and `UPLOAD_FINAL` before running.
+The raw datasets are not included. Before running the scripts, make the
+upstream data files available in the cloned repository at the paths listed in
+Section 9.2. IEMOCAP requires a license request. KaggleHub checkpoint and
+final-model uploads are enabled by default; configure Kaggle authentication
+for these uploads, or disable `UPLOAD_CHECKPOINTS` and `UPLOAD_FINAL` before
+running.
 
 ### 8.3 Patches to the official repo
 
@@ -227,18 +228,48 @@ disable audio context.
 | B0 script | `Phi-3-mini-4k-instruct_without-desc.py` (`audio_description=False`) |
 | B1 script | `Phi-3-mini-4k-instruct_with-desc.py` (`audio_description=True`) |
 
+#### Dataset files required by preprocessing
+
+The scripts clone the upstream project but do not download or mount the
+datasets. The upstream `LLM_code/data_process.py` expects these files relative
+to `LLM_code/` in each clone:
+
+| Dataset | Required files and directories |
+|---|---|
+| Both | `../original_data/<dataset>/<dataset>.pkl` and the corresponding feature files under `../speech_features/` |
+| MELD | `../speech_features/meld_processed_5class_{train,test,dev}_audio_features.csv`; `../data/MELD/<split>/<split>_audio/` WAV files for each of `train`, `dev`, and `test` |
+| IEMOCAP | `../speech_features/processed_iemocap_audio_features_5.csv`; `../data/IEMOCAP_full_release/iemocap_full_dataset.csv` and the audio paths referenced by that CSV |
+
+Use the official dataset releases and upstream SpeechCueLLM instructions to
+prepare the pickles, features, and audio files; the IEMOCAP release requires
+the appropriate license. Some feature CSVs may already be present in the
+upstream clone; verify that every file listed above exists. For a Kaggle run,
+mount or copy any missing assets into the corresponding paths in
+`/kaggle/working/SpeechCueLLM/` for B1 and
+`/kaggle/working/SpeechCueLLM_nodesc/` for B0. Keep dataset files out of this
+repository.
+
 #### Reproducing the Phi-3 runs
 
 1. Create a Kaggle notebook with internet access and a two-T4 GPU
    accelerator. Make sure you are authorized to access MELD and IEMOCAP;
-   IEMOCAP requires a license request. Attach or stage both raw datasets in
-   the locations expected by upstream SpeechCueLLM's `data_process.py`.
-2. Copy the contents of the B0 script from `notebooks/` into a Kaggle code
-   cell and run it. These scripts contain Kaggle's `%pip` notebook magic and
-   are not ordinary standalone Python scripts. Each installs its dependencies,
-   clones SpeechCueLLM into `/kaggle/working`, and invokes the upstream
-   preparation code with its configured `audio_description` setting.
-3. After B0 finishes, repeat with the B1 script in a fresh cell or notebook.
+   IEMOCAP requires a license request. Clone the upstream repository twice in
+   Kaggle, since the B0 and B1 scripts use separate working copies:
+
+   ```bash
+   !git clone https://github.com/zehuiwu/SpeechCueLLM.git /kaggle/working/SpeechCueLLM_nodesc
+   !git clone https://github.com/zehuiwu/SpeechCueLLM.git /kaggle/working/SpeechCueLLM
+   ```
+
+2. Attach your Kaggle dataset inputs and copy/mount the required files from
+   Section 9.2 into both clones at their listed paths. Confirm the pickle,
+   feature CSV, and referenced audio files are present before running
+   preprocessing.
+3. Copy the B0 script from `notebooks/` into a Kaggle code cell and run it.
+   Then run the B1 script in a separate cell. The scripts contain Kaggle's
+   `%pip` notebook magic and are not ordinary standalone Python scripts. Each
+   installs its dependencies, uses its corresponding clone, and invokes
+   upstream preprocessing with the configured `audio_description` setting.
 4. Let each script run both datasets. Each launches MELD with maximum
    sequence length 512 and IEMOCAP with maximum sequence length 384 in
    separate distributed processes. Do not run both scripts simultaneously on
@@ -288,7 +319,7 @@ Each GPU process scores the full test set, so two values per epoch are reported.
 
 **Takeaway:** on the 3B model we do not observe the paper's +1.4 to +1.9 F1 gain from descriptions. The two GPU processes differ by up to about 1.0 F1, which is larger than the effect, and B0 (5 epochs) vs B1 (3 epochs) used different LR schedules, so a matched 3-epoch B0 run is needed for a fair comparison.
 
-### 10.3 Phi-3-mini results (teammate, IEMOCAP and MELD)
+### 10.3 Phi-3-mini results (IEMOCAP and MELD)
 
 The following single-run test results are from Phi-3 Mini full fine-tuning. B0 uses text-only prompts; B1 includes speech descriptions without audio context.
 
