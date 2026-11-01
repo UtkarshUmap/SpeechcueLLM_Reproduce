@@ -4,8 +4,14 @@
 *.bin
 *.wav
 *.mp4
+*.zip
+
 __pycache__/
 .ipynb_checkpoints/
+.venv/
+
+downloads/
+
 kaggle.json
 .env
 data/*

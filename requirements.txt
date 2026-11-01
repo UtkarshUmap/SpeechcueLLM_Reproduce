@@ -4,3 +4,7 @@ bitsandbytes>=0.50.2
 kagglehub>=1.0.0
 scikit-learn>=1.4
 safetensors
+matplotlib>=3.8,<4
+numpy>=1.26,<3
+pandas>=2.2,<4
+seaborn>=0.13,<1

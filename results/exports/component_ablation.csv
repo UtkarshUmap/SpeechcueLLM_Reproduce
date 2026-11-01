@@ -1,0 +1,9 @@
+dataset,comparison,component,weighted_f1_change
+IEMOCAP,B1-B0,Descriptions,1.03
+IEMOCAP,B2-B1,Denoising,-0.73
+IEMOCAP,B3-B2,SNR-aware wording,0.90
+IEMOCAP,B3-B1,Net effect,0.17
+MELD,B1-B0,Descriptions,0.92
+MELD,B2-B1,Denoising,-2.38
+MELD,B3-B2,SNR-aware wording,2.04
+MELD,B3-B1,Net effect,-0.34
