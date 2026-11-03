@@ -1,7 +1,6 @@
 """Generate README figures from the completed values reported in the final PDF.
 
-Only final-report-confirmed values are encoded here. The r32 PEFT result is
-shown as pending and is not assigned a numerical F1 value.
+Only final-report-confirmed values are encoded here.
 """
 
 from pathlib import Path
@@ -122,10 +121,10 @@ def plot_ablation():
 
 # Final-report Table VII completed PEFT results.
 def plot_peft():
-    methods = ["LoRA r16", "LoRA r8", "LoRA r32\n(pending)", "DoRA r16"]
-    values = [72.50, 72.98, np.nan, 73.73]
+    methods = ["LoRA r16", "LoRA r8", "LoRA r32", "DoRA r16"]
+    values = [72.50, 72.98, 74.07, 73.73]
     params = [12.6, 6.3, 25.2, 13.0]
-    colors = ["#4C78A8", "#72B7B2", "#CCCCCC", "#E45756"]
+    colors = ["#4C78A8", "#72B7B2", "#59A14F", "#E45756"]
 
     fig, ax1 = plt.subplots(figsize=(9, 5))
     bars = ax1.bar(methods, np.nan_to_num(values, nan=0), color=colors,

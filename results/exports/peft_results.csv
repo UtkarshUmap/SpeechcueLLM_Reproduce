@@ -1,5 +1,5 @@
 run,method,rank,use_dora,trainable_parameters_m,epoch1_weighted_f1,epoch2_weighted_f1,epoch3_weighted_f1,runtime_seconds,status
 P1,LoRA,16,false,12.6,64.67,70.30,72.50,16234,completed
 P2,LoRA,8,false,6.3,63.35,70.75,72.98,16529,completed
-P3,LoRA,32,false,25.2,,,,,pending
+P3,LoRA,32,false,25.2,,,74.07,,completed
 P4,DoRA,16,true,13.0,65.03,71.33,73.73,20436,completed

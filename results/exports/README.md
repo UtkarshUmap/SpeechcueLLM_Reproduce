@@ -6,4 +6,4 @@ These CSV files encode completed values verified against the final report:
 - `component_ablation.csv`: component-level weighted-F1 differences.
 - `peft_results.csv`: completed and pending PEFT runs.
 
-Values should be updated only when a notebook run and the final report agree. r32 is intentionally left pending.
+Values should be updated only when a notebook run and the final report agree.

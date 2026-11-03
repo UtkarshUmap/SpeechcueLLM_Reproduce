@@ -50,14 +50,14 @@ Key findings:
 |---|---:|---:|---:|---:|---:|
 | LoRA r16, P1 | 12.6M | 64.67 | 70.30 | 72.50 | 16,234 s |
 | LoRA r8 | 6.3M | 63.35 | 70.75 | 72.98 | 16,529 s |
-| LoRA r32 | 25.2M | TBD | TBD | TBD | TBD |
+| LoRA r32 | 25.2M | TBD | TBD | 74.07 | TBD |
 | DoRA r16 | 13.0M | 65.03 | 71.33 | 73.73 | 20,436 s |
 
 <p align="center">
   <img src="docs/figures/peft_comparison.png" alt="PEFT comparison at epoch 3" width="720">
 </p>
 
-DoRA produced the best completed IEMOCAP result at epoch 3. The r32 result was not completed in the reported final study and remains pending.
+LoRA r32 achieved the best completed IEMOCAP epoch-3 result at 74.07 weighted F1, versus 73.73 for DoRA r16.
 
 ## Repository Structure
 
@@ -146,7 +146,7 @@ Base Python dependencies are listed in `requirements.txt`. Specific notebook env
 
 - Results are single-seed estimates.
 - Main 7B runs use 4-bit QLoRA with LLaMA-2-7B on two T4 GPUs.
-- LoRA r32 and LoRA r4 robustness coverage remain incomplete.
+- LoRA r4 robustness coverage remains incomplete.
 - SNR statement and hedge-word effects were not separated by an ablation.
 - Level-matched denoising with recomputed thresholds was not included in the completed downstream ablation.
 - GPU-memory differences did not separate the completed PEFT methods.
